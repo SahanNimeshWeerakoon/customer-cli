@@ -32,7 +32,41 @@ const findCustomer = name => {
 		});
 }
 
+// Update customer
+const updateCustomer = (_id, customer) => {
+	Customer
+		.updateOne({_id}, customer)
+		.then(customer => {
+			console.info('Customer updated');
+			mongoose.connection.close();
+		});
+}
+
+// Remove customer
+const removeCustomer = (_id) => {
+	Customer
+		.deleteOne({_id})
+		.then(customer => {
+			console.info('Customer removed');
+			mongoose.connection.close();
+		})	
+}
+
+// List all Customers
+const listCustomers = () => {
+	Customer
+		.find()
+		.then(customers => {
+			console.info(customers);
+			console.info(`${customers.length} customers selected`);
+			mongoose.connection.close();
+		})
+}
+
 module.exports = {
 	addCustomer,
-	findCustomer
+	findCustomer,
+	updateCustomer,
+	removeCustomer,
+	listCustomers
 }

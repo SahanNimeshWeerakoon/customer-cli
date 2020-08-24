@@ -1,12 +1,22 @@
 {
-  "name": "customer-cli",
+  "name": "@sahan/customer-cli",
   "version": "1.0.0",
   "description": "Customer management CLI",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "@sahan/customer-cli": "./commands.js",
+    "customer-cli": "./commands.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "customer-cli"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
